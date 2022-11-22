@@ -1,3 +1,3 @@
 # TrabalhoMongoDB-MicroServices
 
-![alt text](https://images2.imgbox.com/15/b6/eud1TW7q_o.png)
+![alt text](https://images2.imgbox.com/4b/29/BuyV9M1S_o.png)
