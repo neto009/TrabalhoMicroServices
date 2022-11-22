@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "7425326d-9fb5-4f19-91c2-0394f57ed953",
+		"name": "Table-MicroService2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14135347"
+	},
+	"item": [
+		{
+			"name": "TABLE BY ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/base-client/table/636bbf44f9c8e242f03d68c3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"base-client",
+						"table",
+						"636bbf44f9c8e242f03d68c3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INSERT NUMBER VALUE",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\": \"636be1904e84320eb9b433d8\", \"longValue\": 10.0}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8765/base-client/table/numberColumn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"base-client",
+						"table",
+						"numberColumn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INSERT STRING VALUE",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\": \"636be1904e84320eb9b433da\", \"stringValue\": \"aaaaaaaa\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8765/base-client/table/stringColumn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"base-client",
+						"table",
+						"stringColumn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INSERT DATE VALUE",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\": \"636be1904e84320eb9b433d9\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8765/base-client/table/dateColumn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"base-client",
+						"table",
+						"dateColumn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INSERT BLACK LINE",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/base-client/table/insertLine/636be19b4e84320eb9b433e0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"base-client",
+						"table",
+						"insertLine",
+						"636be19b4e84320eb9b433e0"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

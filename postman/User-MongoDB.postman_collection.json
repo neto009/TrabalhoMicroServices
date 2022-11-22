@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "2a5322f0-b957-4532-b83e-44c64d4d6eb2",
+		"name": "User-MongoDB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14135347"
+	},
+	"item": [
+		{
+			"name": "FIND USER",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/workspace-client/user/63649447c2911f5dc2c78ab4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"workspace-client",
+						"user",
+						"63649447c2911f5dc2c78ab4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE USER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\": \"solange_freitas01@hotmail.com\", \"name\": \"Solange\", \"address\": {\n    \"number\": \"10\",\n    \"street\": \"Rua Bolivia\",\n    \"district\": \"Parque das Americas\"\n}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8765/workspace-client/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"workspace-client",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE USER",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\": \"63649447c2911f5dc2c78ab4\", \"name\": \"neto\"}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8765/workspace-client/user/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"workspace-client",
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

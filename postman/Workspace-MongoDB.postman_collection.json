@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "e3fc2f5b-1283-4395-bee7-cffba94654fa",
+		"name": "Workspace-MongoDB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14135347"
+	},
+	"item": [
+		{
+			"name": "ALL WORKSPACE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/workspace-client/workspace/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"workspace-client",
+						"workspace",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE WORKSPACE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"Workspace\", \"userId\": \"63649447c2911f5dc2c78ab4\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8765/workspace-client/workspace",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"workspace-client",
+						"workspace"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE WORKSPACE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8765/workspace-client/workspace/6362cedc123c162cc837aeca",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"workspace-client",
+						"workspace",
+						"6362cedc123c162cc837aeca"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
