@@ -1,6 +1,7 @@
 package br.edu.iftm.workspace.controller;
 
 import br.edu.iftm.workspace.dto.WorkspaceForm;
+import br.edu.iftm.workspace.dto.WorkspaceUpdateForm;
 import br.edu.iftm.workspace.entity.Workspace;
 import br.edu.iftm.workspace.service.WorkspaceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,11 @@ public class WorkspaceController {
     @PostMapping
     public ResponseEntity<Workspace> save (@Valid @RequestBody WorkspaceForm workspaceForm){
         return new ResponseEntity<>(workspaceService.save(workspaceForm), HttpStatus.OK);
+    }
+
+    @PutMapping
+    public ResponseEntity<Workspace> update (@Valid @RequestBody WorkspaceUpdateForm workspaceUpdateForm){
+        return new ResponseEntity<>(workspaceService.update(workspaceUpdateForm), HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")

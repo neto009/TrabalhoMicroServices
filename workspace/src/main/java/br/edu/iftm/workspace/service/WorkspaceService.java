@@ -1,5 +1,6 @@
 package br.edu.iftm.workspace.service;
 
+import br.edu.iftm.workspace.dto.WorkspaceUpdateForm;
 import br.edu.iftm.workspace.enums.Access;
 import br.edu.iftm.workspace.dto.WorkspaceForm;
 import br.edu.iftm.workspace.entity.Base;
@@ -50,7 +51,10 @@ public class WorkspaceService {
         return workspace;
     }
 
-    public Workspace update(Workspace workspace) {
+    public Workspace update(WorkspaceUpdateForm workspaceUpdateForm) {
+        Workspace workspace = workspaceRepository.findById(workspaceUpdateForm.getId())
+                .orElseThrow(() -> new NotFoundException("Workspace doesn't Exist!"));
+        workspace.setName(workspaceUpdateForm.getName());
         return workspaceRepository.save(workspace);
     }
 

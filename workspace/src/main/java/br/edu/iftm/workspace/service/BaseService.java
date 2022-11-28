@@ -11,6 +11,7 @@ import br.edu.iftm.workspace.message.Message;
 import br.edu.iftm.workspace.message.dto.MessageBaseDTO;
 import br.edu.iftm.workspace.message.dto.MessageDTO;
 import br.edu.iftm.workspace.repository.BaseRepository;
+import br.edu.iftm.workspace.repository.WorkspaceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +24,9 @@ public class BaseService {
 
     @Autowired
     private BaseRepository baseRepository;
+
+    @Autowired
+    private WorkspaceRepository workspaceRepository;
 
     @Autowired
     private WorkspaceService workspaceService;
@@ -44,15 +48,14 @@ public class BaseService {
         Optional<Collaborator> owner = workspace.getCollaboratorList().stream()
                 .filter(colab-> colab.getUser().getId().equals(baseForm.getUserId())).findFirst();
         if(!owner.isPresent()){
-            Collaborator collaborator = new Collaborator(user, Access.OWNER);
-            collaboratorList.add(collaborator);
+            collaboratorList.add(new Collaborator(user, Access.OWNER));
         }
         Base base = new Base(baseForm.getName(), collaboratorList);
         Base currentBase = baseRepository.save(base);
         List<Base> baseList = workspace.getBases();
         baseList.add(currentBase);
         workspace.setBases(baseList);
-        workspaceService.update(workspace);
+        workspaceRepository.save(workspace);
         message.sendMessageBase(new MessageBaseDTO(currentBase.getId(), currentBase.getName()));
         message.sendMessage(new MessageDTO(currentBase.getId(), currentBase.getName(), user.getId(), Access.OWNER.toString()));
         return currentBase;
