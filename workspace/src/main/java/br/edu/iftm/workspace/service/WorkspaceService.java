@@ -19,6 +19,8 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class WorkspaceService {
@@ -36,6 +38,7 @@ public class WorkspaceService {
     private Message message;
 
     public List<Workspace> findAll() {
+        List<Workspace> workspaces = workspaceRepository.findAll();
         return workspaceRepository.findAll();
     }
 
@@ -55,6 +58,12 @@ public class WorkspaceService {
         Workspace workspace = workspaceRepository.findById(workspaceUpdateForm.getId())
                 .orElseThrow(() -> new NotFoundException("Workspace doesn't Exist!"));
         workspace.setName(workspaceUpdateForm.getName());
+        Access userAccess = workspace.getCollaboratorList()
+                .stream()
+                .filter(i-> i.getUser().getId().equals(workspaceUpdateForm.getUserId()))
+                .map(j-> j.getAccess())
+                .findAny().orElseThrow(() -> new NotFoundException("User don't have access!"));
+        message.sendMessage(new MessageDTO(workspace.getId(), workspace.getName(), workspaceUpdateForm.getUserId(), userAccess.toString()));
         return workspaceRepository.save(workspace);
     }
 

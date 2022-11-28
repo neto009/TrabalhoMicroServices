@@ -1,5 +1,6 @@
 package br.edu.iftm.workspace.service;
 
+import br.edu.iftm.workspace.dto.BaseUpdateForm;
 import br.edu.iftm.workspace.enums.Access;
 import br.edu.iftm.workspace.dto.BaseForm;
 import br.edu.iftm.workspace.entity.Base;
@@ -61,6 +62,22 @@ public class BaseService {
         return currentBase;
     }
 
+    public Base update(BaseUpdateForm baseUpdateForm) {
+        Base base = baseRepository.findById(baseUpdateForm.getId())
+                .orElseThrow(()-> new NotFoundException("Base no Exist!"));
+        base.setName(baseUpdateForm.getName());
+        Optional<Access> userAccess = base.getCollaboratorList()
+                .stream()
+                .filter(i-> i.getUser().getId().equals(baseUpdateForm.getUserId()))
+                .map(j-> j.getAccess())
+                .findAny();
+        if(!userAccess.isEmpty()) {
+            message.sendMessage(new MessageDTO(base.getId(), base.getName(), baseUpdateForm.getUserId(), userAccess.toString()));
+        } else {
+            //Workspace workspace = workspaceRepository.findByBasesById(baseUpdateForm.getId());
+        }
+        return baseRepository.save(base);
+    }
     public void delete(String id) {
         baseRepository.deleteById(id);
     }

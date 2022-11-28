@@ -1,6 +1,7 @@
 package br.edu.iftm.workspace.controller;
 
 import br.edu.iftm.workspace.dto.BaseForm;
+import br.edu.iftm.workspace.dto.BaseUpdateForm;
 import br.edu.iftm.workspace.entity.Base;
 import br.edu.iftm.workspace.service.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,11 @@ public class BaseController {
     @PostMapping
     public ResponseEntity<Base> save(@Valid @RequestBody BaseForm baseForm) {
         return new ResponseEntity<>(baseService.save(baseForm), HttpStatus.OK);
+    }
+
+    @PutMapping
+    public ResponseEntity<Base> update(@Valid @RequestBody BaseUpdateForm baseUpdateForm) {
+        return new ResponseEntity<>(baseService.update(baseUpdateForm), HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
