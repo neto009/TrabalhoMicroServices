@@ -14,8 +14,8 @@ import java.time.Instant;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Document(collection = "log")
-public class Log {
+@Document(collection = "logWorkspace")
+public class LogWorkspace {
 
     @Id
     private String id;
@@ -25,7 +25,7 @@ public class Log {
     private String user;
     private String collaboratorAccess;
 
-    public Log ( String spaceId, String spaceName, String user, String collaboratorAccess) {
+    public LogWorkspace(String spaceId, String spaceName, String user, String collaboratorAccess) {
         this.spaceId = spaceId;
         this.spaceName = spaceName;
         this.user = user;

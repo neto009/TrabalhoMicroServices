@@ -3,7 +3,7 @@
 
 #### Repositórios:
 
-- **Documentação com Swagger**: Acessar pelo path do MicroService no Eureka. Exemplo: http://192.168.100.128:35327/swagger-ui/index.html
+- **Documentação com Swagger**: Acessar pelo path do MicroService no Eureka. Exemplo: http://xxxxxxx:35327/swagger-ui/index.html
 - **Log**: Sistema de Logs utilizando mensageria com RabbitMQ.
 - **postman**: Collections do postman para uso nos projetos.
 - **eureka**: Projeto exemplo utilizando o Netflix Eureka Service Registry 

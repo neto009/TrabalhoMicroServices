@@ -1,4 +1,4 @@
-package br.edu.iftm.base.message.dto;
+package br.edu.iftm.LOG.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class MessageDTO {
+public class MessageBaseDTO {
     private String spaceId;
-    private ResquestType requestType;
+    private String requestType;
     private String user;
     private String collaboratorAccess;
 }

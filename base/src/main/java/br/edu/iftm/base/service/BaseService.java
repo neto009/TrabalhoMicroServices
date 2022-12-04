@@ -5,6 +5,9 @@ import br.edu.iftm.base.dto.TableDTO;
 import br.edu.iftm.base.entity.Base;
 import br.edu.iftm.base.entity.ReferenceAttributes;
 import br.edu.iftm.base.entity.Table;
+import br.edu.iftm.base.message.Message;
+import br.edu.iftm.base.message.dto.MessageDTO;
+import br.edu.iftm.base.message.dto.ResquestType;
 import br.edu.iftm.base.repository.BaseRepository;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,8 +35,12 @@ public class BaseService {
     @Autowired
     private MongoTemplate mongoTemplate;
 
+    @Autowired
+    private Message message;
+
     public BaseDTO findById(String id) {
-        Base base = baseRepository.findById(id).orElseThrow(()-> new RuntimeException("No Exist"));
+        Base base = baseRepository.findById(id)
+                .orElseThrow(()-> new RuntimeException("No Exist"));
         return new BaseDTO(base);
     }
 
@@ -56,7 +63,6 @@ public class BaseService {
         ReferenceAttributes referenceAttributes = referenceAttributesService.save();
         Table table = tableService.save(new Table("Teste", referenceAttributes));
         tableList.add(table);
-        Base base = new Base(id, name, tableList);
-        return baseRepository.save(base);
+        return baseRepository.save(new Base(id, name, tableList));
     }
 }
