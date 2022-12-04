@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "291bc52c-92ee-4ce5-80ee-f10ba83bd4f6",
+		"name": "Log",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14135347"
+	},
+	"item": [
+		{
+			"name": "GET ALL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/log-client/logWorkspace/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"log-client",
+						"logWorkspace",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BY ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/log-client/logWorkspace/638ccc930112bf4a93140097",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"log-client",
+						"logWorkspace",
+						"638ccc930112bf4a93140097"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FIND BY USER",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/log-client/logWorkspace/user/638155ea7b413743e0d0c5f3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"log-client",
+						"logWorkspace",
+						"user",
+						"638155ea7b413743e0d0c5f3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FIND BY SPACE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/log-client/logWorkspace/space/638ccc9364b5325b62a56ab5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"log-client",
+						"logWorkspace",
+						"space",
+						"638ccc9364b5325b62a56ab5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FIND BY DATE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/log-client/logWorkspace/date/2022-12-04T16:36:35.847Z",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"log-client",
+						"logWorkspace",
+						"date",
+						"2022-12-04T16:36:35.847Z"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

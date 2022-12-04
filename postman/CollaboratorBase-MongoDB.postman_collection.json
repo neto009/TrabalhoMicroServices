@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "ee11aba2-d0cc-4cb5-92a7-ad15fe3821be",
+		"name": "CollaboratorBase-MongoDB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14135347"
+	},
+	"item": [
+		{
+			"name": "FIND BY ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userId\": \"638155ea7b413743e0d0c5f3\", \"spaceId\": \"638163ced9a56c112bf25d5d\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8765/workspace-client/basecollaborator/colaborator",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"workspace-client",
+						"basecollaborator",
+						"colaborator"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FIND ALL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/workspace-client/basecollaborator/638163ced9a56c112bf25d5d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"workspace-client",
+						"basecollaborator",
+						"638163ced9a56c112bf25d5d"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -12,7 +12,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8765/base-client/table/636bbf44f9c8e242f03d68c3",
+					"raw": "http://localhost:8765/base-client/table/636be19b4e84320eb9b433e1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -21,7 +21,7 @@
 					"path": [
 						"base-client",
 						"table",
-						"636bbf44f9c8e242f03d68c3"
+						"636be19b4e84320eb9b433e1"
 					]
 				}
 			},
@@ -123,7 +123,7 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8765/base-client/table/insertLine/636be19b4e84320eb9b433e0",
+					"raw": "http://localhost:8765/base-client/table/insertLine/637503ba164c281f87dbf7ac",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -133,7 +133,7 @@
 						"base-client",
 						"table",
 						"insertLine",
-						"636be19b4e84320eb9b433e0"
+						"637503ba164c281f87dbf7ac"
 					]
 				}
 			},

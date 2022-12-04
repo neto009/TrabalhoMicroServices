@@ -65,6 +65,60 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "FIND BY ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userId\": \"638155ea7b413743e0d0c5f3\", \"spaceId\": \"638163b0d9a56c112bf25d5b\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8765/workspace-client/workspacecollaborator/colaborator",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"workspace-client",
+						"workspacecollaborator",
+						"colaborator"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FIND ALL COLAB",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/workspace-client/workspacecollaborator/638163b0d9a56c112bf25d5b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"workspace-client",
+						"workspacecollaborator",
+						"638163b0d9a56c112bf25d5b"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
