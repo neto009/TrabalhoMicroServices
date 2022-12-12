@@ -3,7 +3,6 @@ package br.edu.iftm.bridge.integration.impl;
 import br.edu.iftm.bridge.dto.WorkspaceDTO;
 import br.edu.iftm.bridge.integration.BridgeIntegration;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -25,4 +24,5 @@ public class BridgeIntegrationImpl implements BridgeIntegration {
     public List<WorkspaceDTO> findWorkspaceById() {
         return List.of(restTemplate.getForObject(url, WorkspaceDTO[].class));
     }
+
 }
