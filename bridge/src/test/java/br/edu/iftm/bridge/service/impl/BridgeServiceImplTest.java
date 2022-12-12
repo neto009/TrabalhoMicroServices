@@ -6,35 +6,36 @@ import br.edu.iftm.bridge.service.BridgeService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
-import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 class BridgeServiceImplTest {
 
+
     private BridgeService bridgeService;
 
-    @Mock
-    private RestTemplate restTemplate;
-
-    @Mock
     private BridgeIntegration bridgeIntegration;
 
     @BeforeEach
     void settings() {
-        restTemplate = new RestTemplate();
-        MockitoAnnotations.initMocks(BridgeServiceImpl.class);
+        bridgeService = mock(BridgeServiceImpl.class);
+        bridgeIntegration = mock(BridgeIntegration.class);
     }
 
 
     @Test
     public void findAllWorkspace() {
-        when(bridgeService.findWorkspaceById()).thenReturn((List<WorkspaceDTO>) Mockito.any(WorkspaceDTO.class));
+        List<WorkspaceDTO> workspaceDTOS = new ArrayList<>();
+        WorkspaceDTO workspaceDTO = new WorkspaceDTO();
+        workspaceDTOS.add(workspaceDTO);
+        workspaceDTOS.add(workspaceDTO);
+
+        when(bridgeIntegration.findWorkspaceById()).thenReturn(workspaceDTOS);
+        when(bridgeService.findWorkspaceById()).thenReturn(workspaceDTOS);
         List<WorkspaceDTO> find = bridgeService.findWorkspaceById();
 
         Assertions.assertNotNull(find);
